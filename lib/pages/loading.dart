@@ -10,15 +10,13 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  String loadingText = "loading...";
 
   void setupLocationTime() async {
-    LocationTime lt = LocationTime(location: 'Berlin', apiLocation: 'Europe/Berlin');
+    LocationTime lt = LocationTime(location: 'Delhi', apiLocation: 'Asia/Kolkata');
     await lt.setTime();
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': lt.location,
       'time': lt.time,
-      'isDay': lt.isDay
     });
   }
 
